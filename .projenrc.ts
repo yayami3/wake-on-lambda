@@ -13,7 +13,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     ignorePatterns: ['*.d.ts', 'functions/**/*'],
   },
   // deps: [], /* Runtime dependencies of this module. */
-  keywords: ['lambda', 'cost'],
+  keywords: ['cdk', 'awscdk', 'aws-cdk', 'lambda', 'cost'],
   license: 'Apache-2.0',
   tsconfigDev: {
     compilerOptions: {},

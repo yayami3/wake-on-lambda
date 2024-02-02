@@ -20,7 +20,7 @@ npm install wake-on-lambda
 ```
 
 ## Usage
-See [example](/wake-on-lambda/example/index.ts)
+See [example](example/index.ts)
 
 
 
