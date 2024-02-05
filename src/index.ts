@@ -37,8 +37,8 @@ export class WakeOnLambda extends Construct {
         actions: ['ec2:StartInstances'],
         resources: ['*'],
         conditions: {
-          "StringEquals": {"ec2:InstanceID": props.instanceId}
-        }
+          StringEquals: { 'ec2:InstanceID': props.instanceId },
+        },
       }),
     );
   }

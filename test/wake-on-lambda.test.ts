@@ -22,7 +22,5 @@ describe('WakeOnLambda Stack', () => {
       Runtime: 'nodejs20.x',
       Timeout: 600,
     });
-
-
   });
 });

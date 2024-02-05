@@ -1,4 +1,5 @@
 import { awscdk } from 'projen';
+import { TrailingComma } from 'projen/lib/javascript';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yayami3',
   authorAddress: '116920988+yayami3@users.noreply.github.com',
@@ -12,6 +13,16 @@ const project = new awscdk.AwsCdkConstructLibrary({
     dirs: [],
     ignorePatterns: ['*.d.ts', 'functions/**/*'],
   },
+  prettier: true,
+  prettierOptions: {
+    settings: {
+      singleQuote: true,
+      jsxSingleQuote: true,
+      trailingComma: TrailingComma.ALL,
+      semi: true,
+      printWidth: 100,
+    },
+  },
   // deps: [], /* Runtime dependencies of this module. */
   keywords: ['cdk', 'awscdk', 'aws-cdk', 'lambda', 'cost'],
   license: 'Apache-2.0',
@@ -22,7 +33,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description:
     'Wake-on-Lambda is a module centered around a lambda function that receives HTTP requests. In the event that the destination server is inactive, it initiates the server and subsequently redirects the user to the destination.' /* The description is just a string that helps people understand the purpose of the package. */,
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: ['@types/jest', 'aws-sdk'], /* Build dependencies for this module. */
+  devDeps: ['@types/jest', 'aws-sdk'] /* Build dependencies for this module. */,
   // packageName: undefined,  /* The "name" in package.json. */
 });
 project.synth();
