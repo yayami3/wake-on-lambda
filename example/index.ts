@@ -1,10 +1,11 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
+import { Role, ServicePrincipal, ManagedPolicy } from 'aws-cdk-lib/aws-iam';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as elbv2 from 'aws-cdk-lib/aws-elasticloadbalancingv2';
 import { InstanceTarget, LambdaTarget } from 'aws-cdk-lib/aws-elasticloadbalancingv2-targets';
 import { Construct } from 'constructs';
+import * as fs from 'fs';
 import { WakeOnLambda } from 'wake-on-lambda';
-import { Role, ServicePrincipal, ManagedPolicy } from 'aws-cdk-lib/aws-iam';
 
 export class ExampleStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -52,6 +53,9 @@ export class ExampleStack extends Stack {
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
     });
+
+    const userData = fs.readFileSync('user-data.sh', {encoding: 'utf-8'});
+    instance.addUserData(userData);
 
     const wakeOnLambda = new WakeOnLambda(this, 'Default', {
       instanceId: instance.instanceId,
