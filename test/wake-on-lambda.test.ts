@@ -9,11 +9,11 @@ describe('WakeOnLambda Stack', () => {
     const stack = new Stack(app, 'TestStack');
 
     const instanceId = 'i-XXXXXXXXX';
-    const albDnsName = 'xxx.us-west-1.elb.amazonaws.com';
+    const destinationUrl = 'xxx.us-west-1.elb.amazonaws.com';
 
     new WakeOnLambda(stack, 'TestWakeOnLambda', {
       instanceId: instanceId,
-      albDnsName: albDnsName,
+      destinationUrl: destinationUrl,
     });
 
     const template = Template.fromStack(stack);

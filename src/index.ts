@@ -5,8 +5,17 @@ import { Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 
 export interface WakeOnLambdaProps {
+  /**
+   *The instance id of destination server.
+   *
+   */
   readonly instanceId: string;
-  readonly albDnsName: string;
+
+  /**
+   * The url of destination server.
+   *
+   */
+  readonly destinationUrl: string;
 }
 
 export class WakeOnLambda extends Construct {
@@ -21,7 +30,7 @@ export class WakeOnLambda extends Construct {
       timeout: Duration.seconds(600),
       environment: {
         INSTANCE_ID: props.instanceId,
-        ALB_DNS_NAME: props.albDnsName,
+        ALB_DNS_NAME: props.destinationUrl,
       },
     });
 

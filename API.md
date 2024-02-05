@@ -128,18 +128,20 @@ const wakeOnLambdaProps: WakeOnLambdaProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#wake-on-lambda.WakeOnLambdaProps.property.albDnsName">albDnsName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#wake-on-lambda.WakeOnLambdaProps.property.instanceId">instanceId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#wake-on-lambda.WakeOnLambdaProps.property.destinationUrl">destinationUrl</a></code> | <code>string</code> | The url of destination server. |
+| <code><a href="#wake-on-lambda.WakeOnLambdaProps.property.instanceId">instanceId</a></code> | <code>string</code> | The instance id of destination server. |
 
 ---
 
-##### `albDnsName`<sup>Required</sup> <a name="albDnsName" id="wake-on-lambda.WakeOnLambdaProps.property.albDnsName"></a>
+##### `destinationUrl`<sup>Required</sup> <a name="destinationUrl" id="wake-on-lambda.WakeOnLambdaProps.property.destinationUrl"></a>
 
 ```typescript
-public readonly albDnsName: string;
+public readonly destinationUrl: string;
 ```
 
 - *Type:* string
+
+The url of destination server.
 
 ---
 
@@ -150,6 +152,8 @@ public readonly instanceId: string;
 ```
 
 - *Type:* string
+
+The instance id of destination server.
 
 ---
 

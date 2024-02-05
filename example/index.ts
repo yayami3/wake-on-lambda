@@ -55,7 +55,7 @@ export class ExampleStack extends Stack {
 
     const wakeOnLambda = new WakeOnLambda(this, 'Default', {
       instanceId: instance.instanceId,
-      albDnsName: lb.loadBalancerDnsName,
+      destinationUrl: `http://${lb.loadBalancerDnsName}`,
     });
 
     const listener = lb.addListener('Listener', { port: 80 });
