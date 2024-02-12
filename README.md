@@ -20,7 +20,7 @@ npm install wake-on-lambda
 ```
 
 ## Usage
-See [example](example/index.ts)
+See [example](https://github.com/yayami3/wake-on-lambda/blob/main/example/index.ts)
 
 
 
