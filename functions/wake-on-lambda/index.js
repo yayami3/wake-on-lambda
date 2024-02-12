@@ -7,7 +7,7 @@ const ec2 = new EC2();
 
 exports.handler = async (event) => {
   const instanceId = process.env.INSTANCE_ID ?? '';
-  const albDnsName = process.env.ALB_DNS_NAME ?? ';';
+  const destinationUrl = process.env.DESTINATION_URL ?? ';';
   try {
     const instanceState = await getInstanceState(instanceId);
 
@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 302,
       headers: {
-        Location: `https://${albDnsName}`,
+        Location: destinationUrl,
       },
       body: '',
     };

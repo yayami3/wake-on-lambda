@@ -30,7 +30,7 @@ export class WakeOnLambda extends Construct {
       timeout: Duration.seconds(600),
       environment: {
         INSTANCE_ID: props.instanceId,
-        ALB_DNS_NAME: props.destinationUrl,
+        DESTINATION_URL: props.destinationUrl,
       },
     });
 
